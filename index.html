@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер цветов - CMYK/RGB/HSV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Конвертер цветов</h1>
+            <p>CMYK ↔ RGB ↔ HSV</p>
+        </header>
+
+        <div class="color-preview">
+            <div id="colorDisplay" class="color-display"></div>
+            <div class="color-hex">
+                HEX: <span id="hexValue">#000000</span>
+            </div>
+        </div>
+
+        <div class="warning" id="warningMessage" style="display: none;">
+            ⚠️ Внимание: некоторые значения были скорректированы для соответствия допустимым диапазонам
+        </div>
+
+        <div class="color-models">
+            <!-- RGB Model -->
+            <div class="color-model">
+                <h2>RGB</h2>
+                <div class="color-inputs">
+                    <div class="input-group">
+                        <label for="rgbR">R (0-255):</label>
+                        <input type="number" id="rgbR" min="0" max="255" value="0">
+                        <input type="range" id="rgbRRange" min="0" max="255" value="0" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="rgbG">G (0-255):</label>
+                        <input type="number" id="rgbG" min="0" max="255" value="0">
+                        <input type="range" id="rgbGRange" min="0" max="255" value="0" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="rgbB">B (0-255):</label>
+                        <input type="number" id="rgbB" min="0" max="255" value="0">
+                        <input type="range" id="rgbBRange" min="0" max="255" value="0" class="slider">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CMYK Model -->
+            <div class="color-model">
+                <h2>CMYK</h2>
+                <div class="color-inputs">
+                    <div class="input-group">
+                        <label for="cmykC">C (0-100%):</label>
+                        <input type="number" id="cmykC" min="0" max="100" value="0" step="0.1">
+                        <input type="range" id="cmykCRange" min="0" max="100" value="0" step="0.1" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="cmykM">M (0-100%):</label>
+                        <input type="number" id="cmykM" min="0" max="100" value="0" step="0.1">
+                        <input type="range" id="cmykMRange" min="0" max="100" value="0" step="0.1" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="cmykY">Y (0-100%):</label>
+                        <input type="number" id="cmykY" min="0" max="100" value="0" step="0.1">
+                        <input type="range" id="cmykYRange" min="0" max="100" value="0" step="0.1" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="cmykK">K (0-100%):</label>
+                        <input type="number" id="cmykK" min="0" max="100" value="0" step="0.1">
+                        <input type="range" id="cmykKRange" min="0" max="100" value="0" step="0.1" class="slider">
+                    </div>
+                </div>
+            </div>
+
+            <!-- HSV Model -->
+            <div class="color-model">
+                <h2>HSV</h2>
+                <div class="color-inputs">
+                    <div class="input-group">
+                        <label for="hsvH">H (0-360°):</label>
+                        <input type="number" id="hsvH" min="0" max="360" value="0" step="0.1">
+                        <input type="range" id="hsvHRange" min="0" max="360" value="0" step="0.1" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="hsvS">S (0-100%):</label>
+                        <input type="number" id="hsvS" min="0" max="100" value="0" step="0.1">
+                        <input type="range" id="hsvSRange" min="0" max="100" value="0" step="0.1" class="slider">
+                    </div>
+                    <div class="input-group">
+                        <label for="hsvV">V (0-100%):</label>
+                        <input type="number" id="hsvV" min="0" max="100" value="0" step="0.1">
+                        <input type="range" id="hsvVRange" min="0" max="100" value="0" step="0.1" class="slider">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-picker-section">
+            <h2>Палитра цветов</h2>
+            <input type="color" id="colorPicker" value="#000000">
+            <button id="applyColorPicker">Применить цвет из палитры</button>
+        </div>
+
+        <div class="actions">
+            <button id="resetBtn">Сбросить</button>
+            <button id="randomBtn">Случайный цвет</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
