@@ -51,7 +51,7 @@ git clone <url-репозитория>
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/ваш-username/color-converter.git
+git clone https://github.com/IgnatenkoIgorV/color-converter.git
 
 # Откройте index.html в браузере
 open index.html
